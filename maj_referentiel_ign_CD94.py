@@ -259,7 +259,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                     list_del_id.append(layer.dataProvider().fieldNameIndex(f.name()))
             layer.dataProvider().deleteAttributes(list_del_id)
             layer.updateFields()
-
+        '''
         def InputToQgslayer(layer):
             ##if '/' not in layer :
             if not os.path.exists(layer):
@@ -270,7 +270,7 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
                 name = Path(layer).stem
                 qgs_layer = QgsVectorLayer(layer, name)
             return qgs_layer
-
+        '''
 
         # *************************************************************
         # Conversion des id input en QgsVectorLayer
