@@ -9,8 +9,8 @@
 import sys,os
 from qgis.core import *
 
-
-def LoadOracle (name,request,LoadProject):
+# Fonction pour appeler une donnée depuis Oracle (CD94)
+def LoadOracle (NAME_DATA =name,WHERE_CLAUSE=request,LOAD_DATA=LoadProject):
     # Connexion Oracle
     uri= QgsDataSourceUri()
     uri.setConnection("ssig-prod-ora","1521","SSIGPROD.cg94.loc",
@@ -30,12 +30,14 @@ def LoadOracle (name,request,LoadProject):
     mycrs = QgsCoordinateReferenceSystem(2154)
     layer.setCrs(mycrs,True)
     # Chargement de la donnée dans le projet QGIS
-    if LoadProject == 'yes':
+    if LoadProject == true:
+        print ('La couche {} est ajouée dans le projet QGIS'.format(name))
         load= QgsProject.instance().addMapLayer(layer)
     else :
-        pass
-    return layer
+        print ("La couche oracle {} est gardée en mémoire".format(name))
+    return layer # retourne la variable avec la fonction QgsVectorLayer pour lire et écrire dans la donnée
 
-LoadOracle ("V_BD_TOPO_ROUTE_94","\"NUMERO_ROUTE\" = 'D5'","yes")
+# Variable de la donnée Oracle (lancement de la fonction)
+layer_route = LoadOracle ("V_BD_TOPO_ROUTE_94","\"NUMERO_ROUTE\" = 'D5'",false) # QgsVectorLayer de la donnée Oracle
 
 print ("terminé")
