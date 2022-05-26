@@ -38,6 +38,6 @@ def LoadOracle (NAME_DATA =name,WHERE_CLAUSE=request,LOAD_DATA=LoadProject):
     return layer # retourne la variable avec la fonction QgsVectorLayer pour lire et écrire dans la donnée
 
 # Variable de la donnée Oracle (lancement de la fonction)
-layer_route = LoadOracle ("V_BD_TOPO_ROUTE_94","\"NUMERO_ROUTE\" = 'D5'",false) # QgsVectorLayer de la donnée Oracle
+layer_route = LoadOracle ("V_BD_TOPO_ROUTE_94","\"NUMERO_ROUTE\" = 'D5'",False) # QgsVectorLayer de la donnée Oracle
 
 print ("terminé")
