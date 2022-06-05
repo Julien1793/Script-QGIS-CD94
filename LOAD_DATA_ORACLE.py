@@ -13,7 +13,7 @@ from qgis.core import *
 def LoadOracle (NAME_DATA =name,WHERE_CLAUSE=request,LOAD_DATA=LoadProject):
     # Connexion Oracle
     uri= QgsDataSourceUri()
-    uri.setConnection("ssig-prod-ora","1521","SSIGPROD.cg94.loc",
+    uri.setConnection("",","","") #mettre les paramètres de connexion (serveur, port,...)
     "NEXT_DIFF","sigprod")
     # Setdatasource(schéma,table,géométrie,sql,clé)
     name_data = name
