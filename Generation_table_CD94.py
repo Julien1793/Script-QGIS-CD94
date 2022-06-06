@@ -194,8 +194,8 @@ class ExampleProcessingAlgorithm(QgsProcessingAlgorithm):
         def LoadOracle (name,request,LoadProject):
             # Connexion Oracle
             uri= QgsDataSourceUri()
-            uri.setConnection("ssig-prod-ora19","1521","SSIGPROD.cg94.loc",
-            "NEXT_DIFF","sigprod")
+            uri.setConnection(server,port,BDD,
+            utlisateur,mdp)# !!!! Remplacer pour le github public
             # Setdatasource(schéma,table,géométrie,sql,clé)
             name_data = name
             req = request
