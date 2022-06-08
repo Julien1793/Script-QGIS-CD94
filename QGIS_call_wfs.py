@@ -28,9 +28,9 @@ def call_wfs(url,layer_name,crs,size,version):
         print (layer_name+' WFS problème chargement')
     return layer
     
-url='https://wxs-gpu.mongeoportail.ign.fr/externe/39wtxmgtn23okfbbs1al2lz3/wfs'
-layer_name=''
+url='https://wxs-gpu.mongeoportail.ign.fr/externe/39wtxmgtn23okfbbs1al2lz3/wfs'#url wfs
+layer_name=''#Nom de la donnée
 
-call_wfs(url,layer_name,'EPSG:2154','10000','2.0.0')
-QgsProject.instance().addMapLayer(layer)
+layer_wfs = call_wfs(url,layer_name,'EPSG:2154','10000','2.0.0')
+#QgsProject.instance().addMapLayer(layer_wfs)
 print ('termine')
